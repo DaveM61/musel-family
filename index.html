@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Musel Family History — Family Documents</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f9f5ee;
+    --warm-white: #fdfaf4;
+    --ink: #1a1612;
+    --brown: #5c4a32;
+    --muted-brown: #8a7560;
+    --gold: #b8960c;
+    --light-rule: #ddd4c0;
+    --chapter-accent: #7a3b2e;
+    --dark-bg: #1e1710;
+    --max-width: 720px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { font-size: 18px; }
+
+  body {
+    background-color: var(--dark-bg);
+    color: var(--cream);
+    font-family: 'EB Garamond', Georgia, serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── ATMOSPHERIC BACKGROUND ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 20%, rgba(184,150,12,0.06) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 70%, rgba(122,59,46,0.10) 0%, transparent 55%),
+      radial-gradient(ellipse at 50% 50%, rgba(92,74,50,0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── PAGE WRAPPER ── */
+  .page {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── HEADER ── */
+  header {
+    text-align: center;
+    padding: 5rem 0 3.5rem;
+  }
+
+  .header-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.45em;
+    color: var(--muted-brown);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.1s;
+  }
+
+  .gold-rule {
+    width: 160px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.2s;
+  }
+
+  .header-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(2.2rem, 6vw, 3.2rem);
+    color: var(--cream);
+    letter-spacing: 0.02em;
+    line-height: 1.15;
+    margin-bottom: 0.4rem;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards 0.3s;
+  }
+
+  .header-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    color: var(--muted-brown);
+    text-transform: uppercase;
+    margin-top: 1.2rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.5s;
+  }
+
+  /* ── INTRO ── */
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: #a09070;
+    text-align: center;
+    max-width: 480px;
+    margin: 0 auto 4rem;
+    line-height: 1.8;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.6s;
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.4em;
+    color: var(--muted-brown);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.7s;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(184,150,12,0.3), transparent);
+  }
+
+  /* ── DOCUMENT LIST ── */
+  .document-list {
+    list-style: none;
+    margin-bottom: 4rem;
+  }
+
+  .document-item {
+    border-top: 1px solid rgba(221,212,192,0.15);
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards;
+  }
+
+  .document-item:last-child {
+    border-bottom: 1px solid rgba(221,212,192,0.15);
+  }
+
+  .document-item:nth-child(1) { animation-delay: 0.75s; }
+  .document-item:nth-child(2) { animation-delay: 0.85s; }
+  .document-item:nth-child(3) { animation-delay: 0.95s; }
+  .document-item:nth-child(4) { animation-delay: 1.05s; }
+  .document-item:nth-child(5) { animation-delay: 1.15s; }
+  .document-item:nth-child(6) { animation-delay: 1.25s; }
+
+  .document-link {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.2s ease;
+    cursor: pointer;
+  }
+
+  .document-link:hover .doc-title {
+    color: #d4a830;
+  }
+
+  .document-link:hover .doc-icon {
+    color: #d4a830;
+    border-color: rgba(184,150,12,0.5);
+  }
+
+  .doc-icon {
+    flex-shrink: 0;
+    width: 2.2rem;
+    height: 2.2rem;
+    border: 1px solid rgba(221,212,192,0.2);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cinzel', serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.05em;
+    color: var(--muted-brown);
+    margin-top: 0.15rem;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .doc-body {
+    flex: 1;
+  }
+
+  .doc-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--cream);
+    line-height: 1.3;
+    margin-bottom: 0.3rem;
+    transition: color 0.2s ease;
+  }
+
+  .doc-description {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 0.85rem;
+    color: #8a7560;
+    line-height: 1.5;
+  }
+
+  .doc-meta {
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.2em;
+    color: rgba(138,117,96,0.6);
+    text-transform: uppercase;
+    margin-top: 0.4rem;
+  }
+
+  /* ── BADGE ── */
+  .badge {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.45rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.2em 0.6em;
+    border-radius: 2px;
+    margin-left: 0.6rem;
+    vertical-align: middle;
+    position: relative;
+    top: -0.1em;
+  }
+
+  .badge-draft {
+    background: rgba(122,59,46,0.25);
+    color: #c47a60;
+    border: 1px solid rgba(122,59,46,0.4);
+  }
+
+  .badge-complete {
+    background: rgba(184,150,12,0.12);
+    color: #a08830;
+    border: 1px solid rgba(184,150,12,0.3);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 3rem 0 4rem;
+    border-top: 1px solid rgba(221,212,192,0.1);
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 1.4s;
+  }
+
+  .footer-fleuron {
+    font-size: 1rem;
+    color: rgba(138,117,96,0.4);
+    margin-bottom: 1rem;
+  }
+
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.3em;
+    color: rgba(138,117,96,0.4);
+    text-transform: uppercase;
+    line-height: 2;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 480px) {
+    header { padding: 3.5rem 0 2.5rem; }
+    .intro { margin-bottom: 3rem; }
+    .document-link { gap: 1rem; padding: 1.25rem 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header>
+    <div class="header-eyebrow">Musel Family Archives</div>
+    <div class="gold-rule"></div>
+    <h1 class="header-title">Family History</h1>
+    <div class="header-subtitle">Tama County, Iowa &nbsp;·&nbsp; Czech–American Heritage</div>
+  </header>
+
+  <p class="intro">Documents, stories, and records compiled from family memoirs, genealogical research, and the words Agnes left behind.</p>
+
+  <div class="section-label">Documents</div>
+
+  <ul class="document-list">
+
+    <li class="document-item">
+      <a class="document-link" href="agnes_rebik_storybook_v3.html">
+        <div class="doc-icon">HTML</div>
+        <div class="doc-body">
+          <div class="doc-title">
+            A Life Well Lived
+            <span class="badge badge-draft">Draft</span>
+          </div>
+          <div class="doc-description">The story of Agnes Rebik (1907–1995) — farm woman, dancer, matriarch — in her own words and those of her family. Eight chapters complete; Chapter Nine awaiting family memories.</div>
+          <div class="doc-meta">Storybook &nbsp;·&nbsp; HTML</div>
+        </div>
+      </a>
+    </li>
+
+    <li class="document-item">
+      <a class="document-link" href="agnes_rebik_family_groups.md">
+        <div class="doc-icon">MD</div>
+        <div class="doc-body">
+          <div class="doc-title">
+            Family Groups Report
+            <span class="badge badge-complete">Complete</span>
+          </div>
+          <div class="doc-description">Structured genealogical record of all family units transcribed from Agnes's handwritten family history. 353 individuals across 98 family units, with source page citations.</div>
+          <div class="doc-meta">Genealogy &nbsp;·&nbsp; Markdown</div>
+        </div>
+      </a>
+    </li>
+
+    <li class="document-item">
+      <a class="document-link" href="agnes_rebik_family.ged">
+        <div class="doc-icon">GED</div>
+        <div class="doc-body">
+          <div class="doc-title">
+            GEDCOM Export
+            <span class="badge badge-complete">Complete</span>
+          </div>
+          <div class="doc-description">Family Tree Maker–compatible GEDCOM file derived from Agnes's handwritten history. Discrepancies flagged with source page citations embedded as notes.</div>
+          <div class="doc-meta">Genealogy &nbsp;·&nbsp; GEDCOM</div>
+        </div>
+      </a>
+    </li>
+
+  </ul>
+
+  <footer>
+    <div class="footer-fleuron">❧</div>
+    <div class="footer-text">
+      Compiled by David F. Musel &nbsp;·&nbsp; 2026<br>
+      Privately held by the Musel family
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
