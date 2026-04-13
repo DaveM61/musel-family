@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter Nine — As We Remember Her · Family Review Draft</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #faf7f2;
+    --ink: #1a1612;
+    --brown: #5c4a32;
+    --muted-brown: #8a7560;
+    --light-rule: #ddd4c0;
+    --accent: #7a3b2e;
+    --max-width: 740px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { font-size: 17px; }
+
+  body {
+    background-color: var(--cream);
+    color: var(--ink);
+    font-family: 'EB Garamond', Georgia, serif;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 4rem;
+  }
+
+  /* ── REVIEW HEADER ── */
+  .review-banner {
+    background: #2c1f0e;
+    color: #f0e6d2;
+    padding: 1.5rem 2rem;
+    text-align: center;
+  }
+  .review-banner h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+    color: #c8a96a;
+  }
+  .review-banner p {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.95rem;
+    color: #c4b49a;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* ── COLOR LEGEND ── */
+  .legend {
+    max-width: var(--max-width);
+    margin: 2rem auto;
+    padding: 1.25rem 2rem;
+    border: 1px solid var(--light-rule);
+    background: #fff;
+  }
+  .legend-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--muted-brown);
+    margin-bottom: 1rem;
+  }
+  .legend-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem 1rem;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--ink);
+  }
+  .legend-swatch {
+    width: 22px;
+    height: 16px;
+    border-radius: 3px;
+    flex-shrink: 0;
+    border: 1px solid rgba(0,0,0,0.12);
+  }
+  .legend-note {
+    margin-top: 0.9rem;
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 0.85rem;
+    color: var(--muted-brown);
+    font-style: italic;
+    border-top: 1px solid var(--light-rule);
+    padding-top: 0.75rem;
+  }
+
+  /* ── CONTENT ── */
+  .content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .chapter-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.4em;
+    color: var(--muted-brown);
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+    margin-top: 2.5rem;
+  }
+  h2.chapter-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 2rem;
+    color: var(--accent);
+    line-height: 1.2;
+    margin-bottom: 2rem;
+  }
+
+  .section-rule {
+    border: none;
+    border-top: 1px solid var(--light-rule);
+    margin: 2.5rem 0;
+  }
+
+  h3.section-head {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    color: var(--muted-brown);
+    text-transform: uppercase;
+    margin: 2.5rem 0 1.2rem;
+  }
+
+  p {
+    margin-bottom: 1.4em;
+    font-size: 1rem;
+    color: var(--ink);
+  }
+
+  /* ── HIGHLIGHT SPANS ── */
+  .ann     { background: #FFD5CE; padding: 0.05em 2px; border-radius: 2px; }
+  .carol   { background: #C8F0D2; padding: 0.05em 2px; border-radius: 2px; }
+  .phyllis { background: #CCE5FF; padding: 0.05em 2px; border-radius: 2px; }
+  .mary    { background: #E8D5FF; padding: 0.05em 2px; border-radius: 2px; }
+  .jane    { background: #FFE8A0; padding: 0.05em 2px; border-radius: 2px; }
+  .dave    { background: #B8EEE5; padding: 0.05em 2px; border-radius: 2px; }
+  .karen   { background: #FFD0E8; padding: 0.05em 2px; border-radius: 2px; }
+  .jessica { background: #FFF0A0; padding: 0.05em 2px; border-radius: 2px; }
+
+  /* ── EDITORIAL NOTE (inline questions to Carol, etc.) ── */
+  .editorial-note {
+    display: inline;
+    background: #FFF3CD;
+    border: 1px solid #e0c060;
+    border-radius: 3px;
+    padding: 0.1em 0.4em;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #7a5c10;
+  }
+
+  /* ── PULL QUOTE ── */
+  .pullquote {
+    margin: 2rem 0;
+    padding: 1.25rem 1.75rem;
+    border-left: 3px solid var(--accent);
+    background: rgba(122,59,46,0.04);
+  }
+  .pullquote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--brown);
+    margin-bottom: 0;
+  }
+
+  /* ── FOOTER ── */
+  .review-footer {
+    max-width: var(--max-width);
+    margin: 3rem auto 0;
+    padding: 1.5rem 2rem;
+    border-top: 1px solid var(--light-rule);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--muted-brown);
+    text-align: center;
+  }
+
+  @media (max-width: 540px) {
+    .legend-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- REVIEW BANNER -->
+<div class="review-banner">
+  <h1>Family Review Draft</h1>
+  <p>Chapter Nine — As We Remember Her &nbsp;·&nbsp; Agnes Rebik Storybook<br>
+  Your memories are highlighted in your color below. Please review for accuracy, add anything missing, and correct anything that isn't quite right.</p>
+</div>
+
+<!-- COLOR LEGEND -->
+<div class="legend" style="max-width:740px; margin: 2rem auto; padding: 1.25rem 2rem;">
+  <div class="legend-title">Your color key</div>
+  <div class="legend-grid">
+    <div class="legend-item"><div class="legend-swatch" style="background:#FFD5CE;"></div> Ann</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#C8F0D2;"></div> Carol</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#CCE5FF;"></div> Phyllis</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#E8D5FF;"></div> Mary</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#FFE8A0;"></div> Jane</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#B8EEE5;"></div> Dave</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#FFD0E8;"></div> Karen</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#FFF0A0;"></div> Jessica</div>
+  </div>
+  <div class="legend-note">Uncolored text is narrative synthesis — no single source. &nbsp;|&nbsp; <span style="background:#FFF3CD; border:1px solid #e0c060; padding:0.1em 0.4em; border-radius:3px; font-style:italic; color:#7a5c10;">Shaded notes like this</span> are questions for a specific person.</div>
+</div>
+
+<!-- CHAPTER CONTENT -->
+<div class="content">
+
+  <div class="chapter-label">Chapter Nine</div>
+  <h2 class="chapter-title">As We Remember Her</h2>
+
+  <p>Agnes left behind two written recollections of her own life, and they are precise and generous — full of the smell of rendering lard, the sound of Czech songs at feather bees, the pleasure of a garden coming in. But there is a portion of her life she could not write, because it belongs not to her but to the people who came after her: the grandchildren who sat beside her on the sofa, the great-grandchildren who played at her feet. What follows is what they remember.</p>
+
+  <hr class="section-rule">
+  <h3 class="section-head">The Farm</h3>
+
+  <p>Of all the grandchildren, <span class="carol">Carol carries the clearest memories of the farm west of Tama — the one Agnes and Milo worked before they moved to town. She stayed overnight there more than once, and the farm's details come back to her readily: <span class="editorial-note">Carol, is "Great-Grandpa" correct here, or just "Grandpa"?</span> in his rocking chair on the big porch, the large wood stove Agnes cooked on, the Sunday afternoons when the children went upstairs to explore the bedrooms and felt, for no particular reason, that this was a grand adventure.</span></p>
+
+  <p><span class="ann">Ann remembers going out to the barn with her Grandma one evening for milking — the two of them walking back toward the house, Agnes carrying the milk bucket — when the farm's mean dog came up from behind and chased Ann all over the yard. It is the kind of memory that has the quality of a scene: Agnes, the dog, the yard, the fright.</span></p>
+
+  <p><span class="phyllis">Phyllis has her own talisman from those days: a pillow with velvet on one side and brocade on the other that Agnes kept, and that Phyllis always had to have when she stayed over. She associates it most strongly with the farm, though she believes the pillow came to town with Agnes eventually. She still wants it.</span> <span class="carol">Carol remembers a small white pan that hung on a hook along the stairwell to the basement — the pan Agnes used to make oatmeal on their visits. <span class="editorial-note">Carol — I may have missed this during the conversation. Is this accurate?</span></span> <span class="mary">Mary's only memory of the farm is a faint impression from outside, looking in through a window.</span> <span class="jane">Jane</span> and <span class="dave">Dave</span> remember Agnes only in Tama.</p>
+
+  <hr class="section-rule">
+  <h3 class="section-head">The House in Tama</h3>
+
+  <p>The house on Pershing Street was small — everyone agreed on this without being asked. The bathroom alone told the story: the bathtub sat off to the side of the sink, and the water heater shared the same tight space, leaving just enough room to turn around. Agnes managed laundry with the ringer washer she pulled out into the kitchen. <span class="karen">A plate comparing Presidents Lincoln and Kennedy hung on the kitchen wall; every grandchild who ever sat at that table remembered it.</span> <span class="mary">On the same wall, a small wooden box with little drawers and cubbies held the stamps Agnes clipped from certain letters and cards she received, saved for some memory.</span></p>
+
+  <p><span class="karen">The grandchildren who visited had their own rituals. In the back room there were coloring books, and the children knew to write their name and the date on any page they colored — so that the next cousin to visit could see who had been there before them. On the table was the candy bowl, always stocked with Brachs chocolates with various fillings, and Agnes always told them to help themselves. When there were enough people for a meal, the tin TV trays came out.</span></p>
+
+  <p><span class="carol">On the last day of any stay, Agnes took the grandchildren to the dime store in Tama and let each one choose a toy. Carol always chose paper dolls&nbsp;… she loved the beautiful clothes.</span></p>
+
+  <p><span class="carol">Holiday gatherings brought Lawrence's and Hubert's families together under that small roof — a lot of people in a very small place, by any account.</span></p>
+
+  <p><span class="jessica">Great-granddaughter Jessica, who visited as a young child with her mother Phyllis and brother Adam, carries her own set of details from the Tama house. There was a little wooden step stool with a diamond-shaped cutout in the middle that she turned into a mailbox, dropping folded letters through the slot. There was a rag doll with a red dress and black hair, and there was a black rocking chair with blue ABCs on it that she played with too. These are the memories of a child who felt entirely at home.</span></p>
+
+  <hr class="section-rule">
+  <h3 class="section-head">Washington Manor</h3>
+
+  <p>After Milo died in October 1987, Agnes eventually moved to a small apartment in Belle Plaine called Washington Manor. It was a modest place, and she never complained about it. <span class="phyllis">Phyllis, who lived in Toledo, would drive down on Friday nights when her husband Denny had ballgames in Belle Plaine — stopping to pick up pizza, then visiting Great-Grandma before heading to the game.</span> <span class="jessica">Jessica, on those visits, remembers a glass dish of assorted toffee candies in foil wrappers on the table — butter rum were her favorites.</span></p>
+
+  <p><span class="phyllis">Phyllis had taken to making Agnes's clothing herself in those later years: sweatshirts and </span><span class="jessica">shoes and slippers with velcro closures, so that Agnes, whose hands and fingers were badly affected by rheumatoid arthritis, could dress herself more easily. Every Christmas, she received a new sweatshirt outfit.</span> It was a small, practical kindness of the kind that never gets written down until now.</p>
+
+  <hr class="section-rule">
+  <h3 class="section-head">Her Table</h3>
+
+  <p>Every grandchild who ever ate at Agnes's table has a version of the same story. The kolaches were smaller and more compact than the ones her own daughter made — <span class="mary">Mary described them as "shrunken"</span> — but they tasted just as good, and better still when <span class="karen">Agnes warmed them in the electric skillet until the edges crisped slightly and the filling went soft. Karen, Hubert's daughter and Agnes's granddaughter, loved the prune ones especially, and remembered them long after she'd stopped being able to recall other details of those visits.</span></p>
+
+  <p><span class="phyllis">The sugar cookies were a separate category entirely. Agnes's were not rolled out — they were pressed flat with the bottom of a glass dipped in sugar, and they had both oil and butter in the dough, which is the reason they melted in your mouth. Phyllis still makes them. Then there were the toffee bars — a brown sugar base with chocolate chips melted over the top — which everyone agreed tasted better than any recipe tried since, though no one could say exactly why.</span> <span class="ann">There was Thanksgiving scalloped corn with a crusty top. Agnes went out into the country somewhere to harvest filberts — hazelnuts — and used them in pies.</span> There was sauerkraut that drew particular praise.</p>
+
+  <p>And there was the Popitees. <span class="phyllis">Agnes called puff corn "Popitees" and kept it in a tin can, always on hand when the grandchildren came.</span> <span class="carol">Carol, who stayed with Agnes more than once when her parents were out of town, noted that Agnes would say she didn't want any — then eat it happily the moment a bowl was put in front of her.</span></p>
+
+  <hr class="section-rule">
+  <h3 class="section-head">Her Hands</h3>
+
+  <p><span class="phyllis">Agnes crocheted through nearly all of it. Afghans — several grandchildren received one as a wedding gift. Baby blankets. Christmas decorations: a crocheted tree, a Mr. and Mrs. Snowman, a cover for a large coffee can that turned it into a little house, doorknob covers. Doilies that looked like fine tatting but were crocheted. And tablecloths — even when her hands were badly swollen with arthritis, she kept on, working in small four-inch squares, piecing them together one section at a time. A few grandchildren have one.</span></p>
+
+  <p><span class="jessica">Jessica remembers a mint green shawl with a hood that Agnes made for her when she was small. She loved to wear it.</span></p>
+
+  <hr class="section-rule">
+  <h3 class="section-head">A Quiet Faith</h3>
+
+  <p><span class="dave">At some point — the family is not certain exactly when — Milo stopped attending the Catholic church after a dispute over a pew. The story, as the family understands it, is that Grandpa and Agnes had contributed to the church and considered a particular pew their own, as was common at the time. One Sunday they were displaced from it because another family had donated more. Milo was deeply offended and did not go back.</span> Agnes went with him, losing her connection to the parish.</p>
+
+  <p>The grandchildren noted her absence from church, and understood it only later. What struck every one of them was that it did not seem to diminish her. Her faith — if that is what it was — showed up not in observance but in disposition. <span class="mary">Mary said it most plainly: "I don't think you have that kind of joy without a faith in God."</span></p>
+
+  <hr class="section-rule">
+  <h3 class="section-head">What Everyone Remembered</h3>
+
+  <p>If you gathered everyone who contributed to this chapter and asked them to name the one thing they remembered most, they would give you the same answer. She always had a smile and she never complained.</p>
+
+  <p>Not about the farm work. Not about the mastectomy which she moved on from. Not about the small apartment after Milo died. Not about arthritic hands that could no longer hold a pan or a crochet hook the way they once had. Not about spending seventeen years cleaning other people's houses to supplement the household income. <span class="karen">Karen asked Agnes once whether she had wanted to get married at sixteen. Agnes said that was just the way it was done back then — school until eighth grade, work on the farm, then marriage. It was a statement of fact, not complaint.</span></p>
+
+  <p><span class="karen">She had small phrases that everyone remembered. When the light got low in the house, she'd say "make a light" — the old Czech way of putting it. She said "birth a day" for birthday, a remnant of the language she'd spoken from childhood.</span> These are the details that survive a person: not the grand gestures, but the particular words.</p>
+
+  <div class="pullquote">
+    <p><span class="jane">"If you asked her, she would not say she had a hard life. She would say some things were hard to do — but my life was not hard."</span></p>
+  </div>
+
+  <p>Agnes remembered what by any measure was a hard life with what her family recognized as great joy. They all said so, and none of them could quite explain it. That may be the point.</p>
+
+</div>
+
+<div class="review-footer">
+  Draft — Chapter Nine · Agnes Rebik Storybook &nbsp;·&nbsp; Compiled by David F. Musel, 2026<br>
+  Please reply with any corrections, additions, or confirmations.
+</div>
+
+</body>
+</html>
